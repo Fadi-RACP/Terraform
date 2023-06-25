@@ -32,3 +32,4 @@ resource "azurerm_subnet" "Test-Subnet2" {
       azurerm_virtual_network.Test-VNet
     ]
 }
+
