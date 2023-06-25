@@ -22,7 +22,7 @@ resource "azurerm_subnet" "Test-Subnet" {
       azurerm_virtual_network.Test-VNet
     ]
 }
-
+/*
 resource "azurerm_subnet" "Test-Subnet2" {    
     name                 = "${terraform.workspace}-SubnetA"
     resource_group_name  = azurerm_resource_group.Test-grp.name
@@ -32,4 +32,4 @@ resource "azurerm_subnet" "Test-Subnet2" {
       azurerm_virtual_network.Test-VNet
     ]
 }
-
+*/
