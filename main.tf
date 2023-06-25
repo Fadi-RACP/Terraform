@@ -1,6 +1,10 @@
 resource "azurerm_resource_group" "Test-grp" {
   name     = "${terraform.workspace}-grp"
   location = local.location
+  tags = {
+    "CostCentre" = "RACP"
+    "Environment" = "Test"
+  }
 }
 
 resource "azurerm_virtual_network" "Test-VNet" {
@@ -11,6 +15,9 @@ resource "azurerm_virtual_network" "Test-VNet" {
   depends_on = [
     azurerm_resource_group.Test-grp
   ]  
+  tags = {
+    "Environment" = "Test"
+  }
 } 
 
 resource "azurerm_subnet" "Test-Subnet" {    
