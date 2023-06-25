@@ -27,7 +27,7 @@ resource "azurerm_subnet" "Test-Subnet2" {
     name                 = "${terraform.workspace}-SubnetA"
     resource_group_name  = azurerm_resource_group.Test-grp.name
     virtual_network_name = azurerm_virtual_network.Test-VNet.name
-    address_prefixes     = [cidrsubnet(local.virtual_network.address_space,4,2)]
+    address_prefixes     = [cidrsubnet(local.virtual_network.address_space,4,1)]
     depends_on = [
       azurerm_virtual_network.Test-VNet
     ]
