@@ -9,6 +9,8 @@ resource "azurerm_resource_group" "Test-grp" {
 
 module "Network" {
   source = "./Network"
+  Resource_Group_Name = azurerm_resource_group.Test-grp.name
+  depends_on = [ azurerm_resource_group.Test-grp ]
 }
 
 /*
