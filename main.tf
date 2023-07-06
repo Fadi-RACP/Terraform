@@ -21,7 +21,7 @@ resource "azurerm_virtual_network" "Test-VNet" {
 } 
 
 resource "azurerm_subnet" "Test-Subnet" {    
-    name                 = "${terraform.workspace}-Subnet"
+    name                 = "${terraform.workspace}-Subnet1"
     resource_group_name  = azurerm_resource_group.Test-grp.name
     virtual_network_name = azurerm_virtual_network.Test-VNet.name
     address_prefixes     = [cidrsubnet(local.virtual_network.address_space,4,0)]
@@ -31,7 +31,7 @@ resource "azurerm_subnet" "Test-Subnet" {
 }
 
 resource "azurerm_subnet" "Test-Subnet2" {    
-    name                 = "${terraform.workspace}-SubnetA"
+    name                 = "${terraform.workspace}-Subnet2"
     resource_group_name  = azurerm_resource_group.Test-grp.name
     virtual_network_name = azurerm_virtual_network.Test-VNet.name
     address_prefixes     = [cidrsubnet(local.virtual_network.address_space,4,1)]
